@@ -334,7 +334,7 @@ static const struct ieee80211_txrx_stypes
 
 static u64 rtw_get_systime_us(void)
 {
-	return (ktime_get_boottime().tv64 / 1000);
+	return ktime_to_us(ktime_get_boottime());
 }
 
 /* Try to remove non target BSS's SR to reduce PBC overlap rate */
